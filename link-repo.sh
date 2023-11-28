@@ -66,7 +66,7 @@ do
   yarn build
   npx yalc publish
 
-  cd $starting_dir
+  cd $APPLICATION_PATH
   npx yalc add @bullet-train/$npm_package
 done
 
@@ -86,7 +86,7 @@ yarn install
 yarn build
 npx yalc publish
 
-cd $starting_dir
+cd $APPLICATION_PATH
 npx yalc add @bullet-train/$npm_package
 
 
