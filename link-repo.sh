@@ -13,8 +13,20 @@ cd $CORE_PATH
 # Because we NEED to change the lock file.
 bundle config unset deployment
 
+
+echo "----------------------------------------------------------"
+
+packages_string=$(find $CORE_PATH -name 'bullet_train*.gemspec')
+echo "packages_string = ${packages_string}"
+echo "----------------------------------------------------------"
+
+packages_string=$(find $CORE_PATH -name 'bullet_train*.gemspec' | grep -o 'bullet_train-[^\/]*\.gemspec')
+echo "packages_string = ${packages_string}"
+echo "----------------------------------------------------------"
+
 packages_string=$(find $CORE_PATH -name 'bullet_train*.gemspec' | grep -o 'bullet_train-[^\/]*\.gemspec' | sed "s/\.gemspec//")
 echo "packages_string = ${packages_string}"
+echo "----------------------------------------------------------"
 
 readarray -t packages <<<"$packages_string" # Convert to an array.
 
