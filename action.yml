@@ -19,6 +19,13 @@ runs:
       working-directory: ${{ inputs.application_dir }}
       shell: bash
 
+    - run: pwd
+      working-directory: ${{ inputs.core_dir }}
+      shell: bash
+    - run: ls -al
+      working-directory: ${{ inputs.core_dir }}
+      shell: bash
+
     - name: Link local repos
       working-directory: ${{ github.action_path }}
       run: ./link-repo.sh

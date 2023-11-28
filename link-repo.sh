@@ -14,11 +14,14 @@ cd $CORE_PATH
 bundle config unset deployment
 
 packages_string=$(find $CORE_PATH -name 'bullet_train*.gemspec' | grep -o 'bullet_train.*' | sed "s/\/.*//")
+echo "packages_string = ${packages_string}"
+
 readarray -t packages <<<"$packages_string" # Convert to an array.
 
 for package in "${packages[@]}"
 do
   :
+  echo "linking pacakge ${package}"
   grep -v "gem \"$package\"" Gemfile > Gemfile.tmp
   mv Gemfile.tmp Gemfile
   echo "gem \"$package\", path: \"$CORE_PATH/$package\"" >> Gemfile
