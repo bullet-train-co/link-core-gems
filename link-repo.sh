@@ -41,8 +41,14 @@ done
 
 updates="${packages[@]}"
 
+echo "-------------------------------------------------------------------------"
+echo "about to bundle lock --conservative --update $updates"
 bundle lock --conservative --update $updates
+
+echo "-------------------------------------------------------------------------"
+echo "about to bundle install"
 bundle install
+echo "-------------------------------------------------------------------------"
 
 packages=(
   "bullet_train"
