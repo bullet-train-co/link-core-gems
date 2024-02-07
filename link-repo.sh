@@ -7,12 +7,10 @@ echo "APPLICATION_PATH = ${APPLICATION_PATH}"
 cd $APPLICATION_PATH
 
 echo "CORE_PATH = ${CORE_PATH}"
-cd $CORE_PATH
 
-# We do this to preve bundler from complaining that we're changing the lock file.
+# We do this to prevent bundler from complaining that we're changing the lock file.
 # Because we NEED to change the lock file.
 bundle config unset deployment
-
 
 echo "----------------------------------------------------------"
 
