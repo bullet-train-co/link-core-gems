@@ -93,9 +93,11 @@ npx yalc publish
 cd $APPLICATION_PATH
 npx yalc add @bullet-train/$npm_package
 
-
+echo "--------------------------------------------------------"
 cat package.json
-
+echo "--------------------------------------------------------"
+cat Gemfile
+echo "--------------------------------------------------------"
 
 # We do this here becausue the  node/install-packages step complains about
 # needing to modify the lock file.
