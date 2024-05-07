@@ -34,6 +34,8 @@ runs:
         APPLICATION_DIR: ${{ inputs.application_dir }}
         CORE_DIR: ${{ inputs.core_dir }}
         WORKSPACE: ${{ github.workspace }}
+        YARN_ENABLE_IMMUTABLE_INSTALLS: false
+
 
     - run: pwd
       working-directory: ${{ inputs.application_dir }}
